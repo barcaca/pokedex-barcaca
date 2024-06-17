@@ -2,7 +2,10 @@ import '@/styles/globals.css'
 
 import type { Metadata } from 'next'
 
+import { Header } from '@/components/layout/header'
 import { poppins, raleway } from '@/fonts/fonts'
+
+import { Provider } from './providers'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.variable} ${raleway.variable}`}>
-      <body>{children}</body>
+      <body className="flex min-h-screen w-full flex-col bg-background antialiased">
+        <Provider>
+          <Header />
+          {children}
+        </Provider>
+      </body>
     </html>
   )
 }
