@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 const config = {
   darkMode: ['class'],
@@ -10,6 +11,10 @@ const config = {
   ],
   prefix: '',
   theme: {
+    screens: {
+      xs: '475px',
+      ...defaultTheme.screens,
+    },
     fontFamily: {
       heading: 'var(--font-poppins)',
       body: 'var(--font-raleway)',
@@ -22,6 +27,10 @@ const config = {
       },
     },
     extend: {
+      dropShadow: {
+        light: '1px 1px 2px rgba(255,255,255,0.5)',
+        dark: '1px 1px 2px rgba(0,0,0,0.7)',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
