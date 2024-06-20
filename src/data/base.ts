@@ -7,4 +7,9 @@ export const BASE_URL = {
 /**
  * Endpoints of the PokéAPI
  */
-export const ENDPOINTS = { POKEMON: '/pokemon' } as const
+export const ENDPOINTS = {
+  POKEMON: '/pokemon',
+  SPECIES: '/pokemon-species',
+  TYPE: '/type',
+  EVOLUTION: '/evolution-chain',
+} as const
