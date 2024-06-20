@@ -22,8 +22,8 @@ export async function PokemonSheet({ pokemon }: PokemonSheetProps) {
   const typesData = await getType(pokemon.types[0].type.name)
 
   const [species, types] = await Promise.all([speciesData, typesData])
-  const primaryType = pokemon.types[0].type.name
-  const cardStyle = colors[primaryType]?.badge || ''
+  // const primaryType = pokemon.types[0].type.name
+  // const cardStyle = colors[primaryType]?.badge || ''
 
   const evolutionData = await getEvolutions(species.evolution_chain.url)
 
@@ -38,7 +38,7 @@ export async function PokemonSheet({ pokemon }: PokemonSheetProps) {
       .replace(/POKéMON/g, 'Pokémon')
   }
   return (
-    <SheetContent className={cn('space-y-3 overflow-y-auto', cardStyle)}>
+    <SheetContent className={cn('space-y-3 overflow-y-auto')}>
       <div className="flex w-full items-center justify-center">
         <Image
           width={200}
