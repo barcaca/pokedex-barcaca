@@ -34,8 +34,6 @@ const buildItems = [
 /**
  * Header component for the application.
  * Displays the theme toggle, logo, description, and a list of technologies used.
- *
- * @returns {React.FC} - A functional component representing the Header.
  */
 export function Header() {
   return (
@@ -48,27 +46,29 @@ export function Header() {
         <Image width={250} height={50} src="/pokemon-logo.svg" alt="" />
 
         {/* Application description */}
-        <p className="text-center text-muted-foreground">
+        <h1 className="text-center text-muted-foreground">
           Unofficial representation of a pokedex using API called PokeApi
-        </p>
+        </h1>
+        {/* Technologies Used */}
+        <div className="flex items-center gap-4">
+          {/* Text indicating the technologies used */}
+          <p className="text-muted-foreground">Built with</p>
 
-        {/* Text indicating the technologies used */}
-        <p className="text-muted-foreground">Built with</p>
-
-        {/* List of badges for each technology used */}
-        <div className="flex gap-2">
-          {buildItems.map((item) => {
-            return (
-              <Badge
-                key={item.title}
-                title={item.title}
-                variant="outline"
-                className="p-2"
-              >
-                {item.icon}
-              </Badge>
-            )
-          })}
+          {/* List of badges for each technology used */}
+          <div className="flex gap-2">
+            {buildItems.map((item) => {
+              return (
+                <Badge
+                  key={item.title}
+                  title={item.title}
+                  variant="outline"
+                  className="p-2"
+                >
+                  {item.icon}
+                </Badge>
+              )
+            })}
+          </div>
         </div>
       </div>
     </header>

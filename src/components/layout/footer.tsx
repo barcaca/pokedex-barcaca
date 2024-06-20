@@ -18,8 +18,6 @@ interface FooterProps {
  * @param page - The current page number.
  * @param totalPage - The total number of pages.
  * @param pokemon - Optional parameter for filtering pokemon.
- *
- * @returns - A React component for the footer.
  */
 export function Footer({ page, totalPage, pokemon }: FooterProps) {
   /**
@@ -67,14 +65,13 @@ export function Footer({ page, totalPage, pokemon }: FooterProps) {
     return pages
   }
   const pagesToShow = calculatePagesToShow()
-  console.log(pagesToShow)
 
   return (
-    <footer className="absolute bottom-0 flex w-full p-3 md:p-4">
+    <footer className="absolute bottom-0 flex w-full bg-background p-3 md:relative md:p-4">
       <Pagination>
-        <PaginationContent>
+        <PaginationContent className="grid grid-cols-4 xs:flex">
           {/* Previous page button */}
-          <PaginationItem>
+          <PaginationItem className="col-span-2">
             <PaginationPrevious
               href={{
                 query: {
@@ -90,33 +87,39 @@ export function Footer({ page, totalPage, pokemon }: FooterProps) {
             </PaginationPrevious>
           </PaginationItem>
           {/* Render page numbers or ellipses */}
-          {pagesToShow.map((item, index) =>
-            item === -1 ? (
-              <PaginationItem key={index}>
-                <PaginationEllipsis />
-              </PaginationItem>
-            ) : (
-              <PaginationItem key={index}>
-                {/* Page number link */}
-                <PaginationLink
-                  href={{
-                    query: {
-                      ...(pokemon ? { pokemon } : {}),
-                      page: item,
-                    },
-                  }}
-                  isActive={page === item}
-                  className={page === item ? 'pointer-events-none' : undefined}
-                  aria-disabled={page === item}
-                  tabIndex={page === item ? -1 : undefined}
-                >
-                  {item}
-                </PaginationLink>
-              </PaginationItem>
-            ),
-          )}
+          <PaginationItem className="col-span-4 mx-auto">
+            <PaginationContent>
+              {pagesToShow.map((item, index) =>
+                item === -1 ? (
+                  <PaginationItem key={index}>
+                    <PaginationEllipsis />
+                  </PaginationItem>
+                ) : (
+                  <PaginationItem key={index}>
+                    {/* Page number link */}
+                    <PaginationLink
+                      href={{
+                        query: {
+                          ...(pokemon ? { pokemon } : {}),
+                          page: item,
+                        },
+                      }}
+                      isActive={page === item}
+                      className={
+                        page === item ? 'pointer-events-none' : undefined
+                      }
+                      aria-disabled={page === item}
+                      tabIndex={page === item ? -1 : undefined}
+                    >
+                      {item}
+                    </PaginationLink>
+                  </PaginationItem>
+                ),
+              )}
+            </PaginationContent>
+          </PaginationItem>
           {/* Next page button */}
-          <PaginationItem>
+          <PaginationItem className="col-span-2 col-start-3 row-start-1 text-end">
             <PaginationNext
               href={{
                 query: {
