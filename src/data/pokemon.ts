@@ -20,6 +20,7 @@ import { BASE_URL, ENDPOINTS } from './base'
 async function fetchListPokemons(
   page: number,
   limit: number,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   pokemon?: string,
 ): Promise<APIResourceList> {
   // Calculate the offset, limiting it to a maximum of 1025
