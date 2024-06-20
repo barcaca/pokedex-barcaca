@@ -142,7 +142,7 @@ export async function PokemonSheet({ pokemon }: PokemonSheetProps) {
                     <p>#{formatterId(evo.id)}</p>
                   </div>
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="hidden flex-col gap-2 xs:flex">
                   {evo.types.map((type) => {
                     const badgeStyle = colors[type.type.name]?.badge || ''
                     return (

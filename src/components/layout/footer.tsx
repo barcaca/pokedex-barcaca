@@ -67,7 +67,7 @@ export function Footer({ page, totalPage, pokemon }: FooterProps) {
   const pagesToShow = calculatePagesToShow()
 
   return (
-    <footer className="absolute bottom-0 flex w-full bg-background p-3 md:relative md:p-4">
+    <footer className="sticky bottom-0 flex w-full bg-background p-3 md:relative md:p-4">
       <Pagination>
         <PaginationContent className="grid grid-cols-4 xs:flex">
           {/* Previous page button */}
