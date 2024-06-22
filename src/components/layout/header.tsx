@@ -43,7 +43,13 @@ export function Header() {
         <ThemeToggle />
 
         {/* Application logo */}
-        <Image width={250} height={50} src="/pokemon-logo.svg" alt="" />
+        <Image
+          priority
+          width={250}
+          height={92}
+          src="/pokemon-logo.svg"
+          alt="logo image written pokemon"
+        />
 
         {/* Application description */}
         <h1 className="text-center text-muted-foreground">
