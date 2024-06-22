@@ -1,5 +1,6 @@
 import '@/styles/globals.css'
 
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
 
 import { Header } from '@/components/layout/header'
@@ -33,6 +34,7 @@ export default function RootLayout({
           <Header />
           {children}
         </Provider>
+        <SpeedInsights />
       </body>
     </html>
   )
