@@ -1,10 +1,17 @@
 import { cn, formatterId } from '@/lib/utils'
 
 import { Icons } from './icons'
+
 interface PokemonCardNumberProps {
   pokemonId: number
   cardStyle: string
 }
+/**
+ * A functional component that renders a Pokemon card number with a custom style.
+ *
+ * @param pokemonId - The unique identifier of the Pokemon.
+ * @param cardStyle - The custom style class for the card number.
+ */
 export function PokemonCardNumber({
   pokemonId,
   cardStyle,
