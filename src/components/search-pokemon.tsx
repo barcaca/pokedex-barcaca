@@ -22,6 +22,7 @@ export function SearchPokemon({ pokemon }: { pokemon?: string }) {
         placeholder="Pikachu, Mew, etc"
         value={text}
         onChange={(e) => setText(e.target.value)}
+        required
       />
       <Button title="Search" type="submit" variant={'outline'}>
         Search

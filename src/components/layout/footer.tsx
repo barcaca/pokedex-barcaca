@@ -128,7 +128,7 @@ export function Footer({ page, totalPage, pokemon }: FooterProps) {
                 },
               }}
               className={
-                page === totalPage
+                page === totalPage || totalPage === 0
                   ? 'pointer-events-none opacity-10'
                   : undefined
               }

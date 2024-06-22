@@ -1,9 +1,11 @@
+import Link from 'next/link'
 import { Suspense } from 'react'
 
 import { Footer } from '@/components/layout/footer'
 import { PokemonCard } from '@/components/pokemon-card'
 import { PokemonCardSkeleton } from '@/components/pokemon-card-skeleton'
 import { SearchPokemon } from '@/components/search-pokemon'
+import { buttonVariants } from '@/components/ui/button'
 import { getListPokemons } from '@/data/pokemon'
 
 export default async function Home({
@@ -27,7 +29,15 @@ export default async function Home({
         <SearchPokemon pokemon={pokemon} />
         <div className="flex flex-wrap justify-center">
           {listPokemon.results.length === 0 ? (
-            <p>Nenhum Pokémon com esse nome encontrado.</p>
+            <div className="flex flex-col items-center gap-2">
+              <p>Nenhum Pokémon com esse nome encontrado.</p>
+              <Link
+                href={'/'}
+                className={buttonVariants({ variant: 'outline' })}
+              >
+                Back to Home
+              </Link>
+            </div>
           ) : (
             listPokemon.results.map((pokemon) => (
               <Suspense key={pokemon.name} fallback={<PokemonCardSkeleton />}>
