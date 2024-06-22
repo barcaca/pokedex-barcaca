@@ -3,6 +3,7 @@ import { Suspense } from 'react'
 import { Footer } from '@/components/layout/footer'
 import { PokemonCard } from '@/components/pokemon-card'
 import { PokemonCardSkeleton } from '@/components/pokemon-card-skeleton'
+import { SearchPokemon } from '@/components/search-pokemon'
 import { getListPokemons } from '@/data/pokemon'
 
 export default async function Home({
@@ -18,19 +19,22 @@ export default async function Home({
     typeof searchParams.pokemon === 'string' ? searchParams.pokemon : undefined
   const listPokemon = await getListPokemons(page, limit, pokemon)
 
-  const totalPage = Math.ceil(1025 / limit)
+  const totalPage = Math.ceil(Math.min(listPokemon.count, 1025) / limit)
 
   return (
     <>
       <div className="mx-auto h-full w-full max-w-screen-xl">
+        <SearchPokemon pokemon={pokemon} />
         <div className="flex flex-wrap justify-center">
-          {listPokemon.results.map((pokemon) => {
-            return (
+          {listPokemon.results.length === 0 ? (
+            <p>Nenhum Pokémon com esse nome encontrado.</p>
+          ) : (
+            listPokemon.results.map((pokemon) => (
               <Suspense key={pokemon.name} fallback={<PokemonCardSkeleton />}>
                 <PokemonCard pokemonName={pokemon.name} />
               </Suspense>
-            )
-          })}
+            ))
+          )}
         </div>
       </div>
       <Footer page={page} pokemon={pokemon} totalPage={totalPage} />
