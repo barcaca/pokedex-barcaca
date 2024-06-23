@@ -30,7 +30,7 @@ export function SearchPokemon({ pokemon }: { pokemon?: string }) {
   }
   return (
     <form
-      className="sticky top-0 z-10 m-4 mx-auto flex max-w-screen-xs gap-2 border-b border-border bg-background p-3 sm:static sm:border-0 md:p-4"
+      className="sticky top-0 z-10 m-2 mx-auto flex max-w-screen-xs gap-2 border-b border-border bg-background p-3 sm:static sm:border-0 md:p-4"
       onSubmit={handleSubmit}
     >
       <Label className="relative w-full">
