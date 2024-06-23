@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 import { Icons } from '../icons'
+import { Social } from '../social'
 import { ThemeToggle } from '../theme/theme-toggle'
 import { Badge } from '../ui/badge'
 
@@ -76,6 +77,8 @@ export function Header() {
             })}
           </div>
         </div>
+        {/* Socials */}
+        <Social />
       </div>
     </header>
   )
