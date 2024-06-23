@@ -16,7 +16,6 @@ Este é um projeto de Pokédex que permite visualizar e pesquisar Pokémons.
 ## 🖼️ Screenshots
 
 ![Desktop](/public//screenshot-desktop.png)
-![Mobile](/public/screenshot-mobile.png)
 
 ## 🛠️ Tecnologias
 
