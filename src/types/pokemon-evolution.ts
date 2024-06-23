@@ -29,6 +29,10 @@ export interface IEvolutionChain {
   chain: IChainLink
 }
 
+/**
+ * ## Evolution
+ * Represents a Pokémon evolution.
+ */
 export interface IEvolution {
   id: number
   name: string

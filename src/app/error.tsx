@@ -1,10 +1,16 @@
-'use client' // Error components must be Client Components
+'use client'
 
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 
 import { Button } from '@/components/ui/button'
 
+/**
+ * Error component for Next.js applications.
+ * It displays an error message and a button to navigate back to the previous page.
+ *
+ * @param error - The error object that needs to be displayed. It should be of type Error and can optionally have a 'digest' property.
+ */
 export default function Error({
   error,
 }: {

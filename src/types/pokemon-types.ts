@@ -1,4 +1,8 @@
 import { APIResource } from './pokemon'
+
+/**
+ * Represents the different types of Pokémon.
+ */
 export type TypesName =
   | 'grass'
   | 'fire'
@@ -19,15 +23,24 @@ export type TypesName =
   | 'dark'
   | 'steel'
 
+/**
+ * Represents the color scheme for a Pokémon type.
+ */
 export interface TypeColors {
   card: string
   badge: string
 }
 
+/**
+ * Represents a map of Pokémon types to their color schemes.
+ */
 export interface PokemonTypeColors {
   [key: string]: TypeColors
 }
 
+/**
+ * A map of Pokémon types to their color schemes.
+ */
 export const colors: PokemonTypeColors = {
   grass: {
     card: 'fill-green-500 stroke-green-500',

@@ -8,6 +8,9 @@ import { poppins, raleway } from '@/fonts/fonts'
 
 import { Provider } from './providers'
 
+/**
+ * Metadata for the application
+ */
 export const metadata: Metadata = {
   title: 'Pokedex Barcaca - Next.Js',
   description: 'Unofficial representation of a pokedex build with Next.Js 14',
@@ -22,6 +25,10 @@ export const metadata: Metadata = {
   },
 }
 
+/**
+ * Root layout component for the application
+ * @param children - React children to be rendered within the layout
+ */
 export default function RootLayout({
   children,
 }: Readonly<{
