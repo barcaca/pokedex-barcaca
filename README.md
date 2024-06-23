@@ -67,4 +67,4 @@ Construir este projeto proporcionou diversos aprendizados, incluindo:
 
 ## 📜 Licença
 
-[MIT](https://github.com/barcaca/pokedex-barcaca/blob/main/LICENSE)
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [MIT](https://github.com/barcaca/pokedex-barcaca/tree/main?tab=MIT-1-ov-file)
